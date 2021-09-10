@@ -1,0 +1,16 @@
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\HangManProject.exe
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\HangManProject.deps.json
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\HangManProject.runtimeconfig.json
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\HangManProject.runtimeconfig.dev.json
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\HangManProject.dll
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\ref\HangManProject.dll
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\bin\Debug\net5.0\HangManProject.pdb
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.csproj.AssemblyReference.cache
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.AssemblyInfoInputs.cache
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.AssemblyInfo.cs
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.csproj.CoreCompileInputs.cache
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.dll
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\ref\HangManProject.dll
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.pdb
+C:\Users\diluitel\source\repos\HangManProject\HangManProject\obj\Debug\net5.0\HangManProject.genruntimeconfig.cache
