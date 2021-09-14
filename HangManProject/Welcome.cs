@@ -10,12 +10,13 @@ namespace HangManProject
     {
         public static void WelcomeMessage()
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("***Welcome to HangMan Game***");
-            Console.WriteLine("You will guess a letter.");
-            Console.WriteLine("If you miss six times then you loose. Otherwise you win");
-            Console.WriteLine("You will receive the hints along the way to help.");
-            Console.Write("Guess a letter : ");
-
+            Console.WriteLine("You will guess a letter at a time for a randomly selected word.");
+            Console.WriteLine("You can also guess the complete word any time during the game.");
+            Console.WriteLine("If you correctly guess the word before six misses, you win. Otherwise you loose.");
+            Console.WriteLine("You will receive the hints along the way for help.");
+            Console.ResetColor();
         }
     }
 }

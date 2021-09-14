@@ -8,7 +8,6 @@ namespace HangManProject
 {
     public class WordBank
     {
-        //int MyProperty { get; set; }
         public List<string> Words = new List<string>()
         {
           "greeting",
@@ -21,7 +20,6 @@ namespace HangManProject
         {
             Random random = new Random();
             int randomIndex = random.Next(0, Words.Count);
-            //Console.WriteLine("\nindex : " + randomIndex);
             return Words[randomIndex];
         }
 

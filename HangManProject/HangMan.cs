@@ -8,31 +8,121 @@ namespace HangManProject
 {
    public class HangMan
     {
-        
-        public StringBuilder PlayingWord { get; set; }
-        public char Guess { get; set; }
-        public string Misses { get; set; }
-        public int Attempts { get; set; }
-
-        //public StringBuilder pWord = new StringBuilder();
+        public readonly int count = 6;  //max counts you can miss the guesses
+        private string guess = "";
         
 
-        public bool IsHit(char guess, string word, out StringBuilder pWord)
+        private int _misses = 0;
+        public int Misses
         {
-           pWord = PlayingWord;
-            bool hit = false;
-            for (int i = 0; i < word.Length; i++)
+            get => _misses;
+            set => _misses = value;
+        }
+
+        private StringBuilder pWord = new StringBuilder();   //playingWord
+        private StringBuilder incorrectGuess = new StringBuilder();
+
+        private string word;
+        WordBank words = new WordBank();
+
+        public HangMan()
+        {
+            word = words.GetWord();
+            foreach (var ch in word)
             {
-                if (guess == word[i] && pWord[i].Equals('-'))
+                pWord.Append('-');
+            }
+        }
+
+        public void TakeAGuess()
+        {
+            //Console.WriteLine(pWord);
+            SetFontColor(ConsoleColor.Blue);
+            string str1 = "Take a Guess : ";
+            string str2 = "Take another Guess : ";
+            Console.WriteLine();            
+            Console.Write(guess.Equals("") ? str1 : str2);
+            guess = Console.ReadLine().Trim().ToLower();
+            Console.ResetColor();
+        }
+
+        public bool IsHit()
+        {
+            bool hit = false;
+            try
+            {
+                char guessChar = char.Parse(guess.Trim().ToLower());
+                
+                for (int i = 0; i < word.Length; i++)
                 {
-                    pWord[i] = guess;
-                    hit = true;
+                    if (guessChar == word[i] && pWord[i].Equals('-'))
+                    {
+                        pWord[i] = guessChar;
+                        hit = true;
+                    }
                 }
-                else
-                    hit = false;
+            }
+            catch (System.FormatException ex)
+            {
+                Console.WriteLine("You entered multiple characters. Enter one letter at a time.");
             }
             return hit;
         }
 
+        public void CorrectGuess()
+        {
+            SetFontColor(ConsoleColor.Green);
+            Console.WriteLine("Correct guess!\n");
+            Console.WriteLine($"Playing word : {pWord.ToString()}");
+        }
+
+        public void IncorrectGuess()
+        {
+            Misses++;
+            incorrectGuess.Append(guess + " ");
+            SetFontColor(ConsoleColor.DarkYellow);
+
+            Console.WriteLine("Incorrect Guess.\n");
+            Console.WriteLine($"You have {count - Misses} attempts left.");
+            Console.WriteLine($"Incorrect guesses : {incorrectGuess.ToString()}");
+            Console.WriteLine($"Playing word : {pWord.ToString()}");
+
+            if (Misses == 6)
+            {
+                Console.WriteLine($"The Correct Word was : {word}");
+                SetFontColor(ConsoleColor.Red);
+                Console.WriteLine("\nSorry! You Lost. Better luck next time.");
+                Console.ResetColor();
+            }
+            Console.ResetColor();
+        }
+
+        public bool GuessEqualsWord()
+        {
+            if (word.Equals(guess)) return true;
+            else return false;
+        }
+
+        public bool WordEqualsPword()
+        {
+            if (word.Equals(pWord.ToString())) return true;
+            else return false;
+        }
+
+        public void YouWin()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine($"\n  CONGRATULATIONS!!! YOU WON!!!  ");
+            Console.Title = "CONGRATULATIONS!!! YOU WON!!!";
+
+            Console.ResetColor();
+            Console.ReadKey(true);
+        }
+
+        private static void SetFontColor(ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+        }
     }
 }
