@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Welcome class to host the welcome message for HangMan game
+
 namespace HangManProject
 {
     public static class Welcome

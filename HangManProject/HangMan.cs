@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Manipulates all the hangman game strategies
+
 namespace HangManProject
 {
    public class HangMan
@@ -34,6 +36,8 @@ namespace HangManProject
             }
         }
 
+        //user prompts to take a guess
+        //TODO : move this method to Welcome class to return a guess
         public void TakeAGuess()
         {
             //Console.WriteLine(pWord);
@@ -46,6 +50,9 @@ namespace HangManProject
             Console.ResetColor();
         }
 
+        //returns true if the guess char is in the word
+        //also populates the pWord with correct guess char with no repetition
+        //TODO: try refactoring it using string Contains() & IndexOf() methods
         public bool IsHit()
         {
             bool hit = false;
@@ -92,6 +99,7 @@ namespace HangManProject
                 Console.WriteLine($"The Correct Word was : {word}");
                 SetFontColor(ConsoleColor.Red);
                 Console.WriteLine("\nSorry! You Lost. Better luck next time.");
+                Console.Beep();
                 Console.ResetColor();
             }
             Console.ResetColor();
@@ -109,12 +117,15 @@ namespace HangManProject
             else return false;
         }
 
+        //Added font and background color ,and also
+        //display the message on console title bar to celebrate the win little better.
         public void YouWin()
         {
+            string congrats = "CONGRATULATIONS!!! YOU WON!!!";
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.BackgroundColor = ConsoleColor.White;
-            Console.WriteLine($"\n  CONGRATULATIONS!!! YOU WON!!!  ");
-            Console.Title = "CONGRATULATIONS!!! YOU WON!!!";
+            Console.WriteLine($"\n  {congrats}  ");
+            Console.Title = congrats;
 
             Console.ResetColor();
             Console.ReadKey(true);
